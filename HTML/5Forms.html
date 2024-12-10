@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Forms</title>
+</head>
+
+<body>
+
+    <!-- A form is created using the <form> element, which can contain various input elements.
+    When we don't specify a method attribute in the form, or if we set it to GET, the form data is sent as query parameters.
+    If the form's method is set to POST, the data is sent in the body of the request.-->
+    <form action="/submit" method="POST">
+        No Label:
+        <input type="text"><br>
+
+        <!-- Clicking on the label focuses the associated input field. It improves accessibility and usability.
+        label's for attribute must match input's id attribute.  -->
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit">Submit</button>
+    </form><br><br><br> <br><br><br>
+
+    <!-- Attributes of <form>
+    action: Specifies the URL where form data should be sent.
+    method: Defines the HTTP method used to send data (GET or POST).
+    enctype: Determines how form data is encoded. Common values:
+        application/x-www-form-urlencoded (default for most forms).
+        multipart/form-data (used for file uploads).
+        text/plain (rarely used). -->
+
+
+
+    <!-- Basic Input attributes
+    name: The value entered by the user is sent as the value for this key.
+    id: Assigns a unique identifier to the input. Useful for associating labels and targeting elements in JavaScript or CSS.
+    value: Sets the default value of the field, which is sent to the server if the field isn't edited.
+    form: Specifies the ID of a <form> the input belongs to (useful if the input is outside the form tag).
+
+    // Validation attributes
+    required: Ensures the field is filled before submission.
+    step: Specifies the increment step for number or range inputs
+    min, max: Define the range of valid values for number, date, or range inputs.
+    maxlength, minlength: Sets the maximum,minimum number of characters allowed in the input.
+    pattern: Defines a regular expression that the input must match.
+
+
+    // Styling and Behaviour attributes
+    placeholder :Displays a hint inside an input field 
+    autocomplete: Suggests previously entered values for the input field.
+    autofocus: Automatically focuses on the input field when the page loads
+    readonly: Makes the input uneditable while still allowing its value to be copied.
+    disabled: Prevents the user from interacting with the input (no editing or submitting).
+    size: Specifies the width of the input in terms of the number of visible characters
+    list: Associates an <input> with a <datalist> to provide predefined suggestions.-->
+
+
+
+    <h3>Input Types</h3>
+    <form>
+        <label for="name">Text:</label>
+        <input type="text" id="name" name="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+
+        <label for="age">Number:</label>
+        <input type="number" id="age" name="age" step="5" placeholder="step = 5"><br>
+
+        <label for="dob">Date:</label>
+        <input type="date" id="dob" name="dob"><br>
+
+        <label for="file">File Upload:</label>
+        <input type="file" id="file" name="file"><br>
+
+        <!-- input type="image" is used to create an image button that can be clicked to submit a form. It behaves similarly to a regular submit button (<input type="submit">), but instead of displaying text, it shows an image-->
+        <label for="image">Image:</label><br>
+        <input type="image" id="image" name="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYVx6CB56pxO8gwlzLLOkV8fPN0jfF3T_98w&s" width="50px"><br>
+
+        <label for="color">color:</label>
+        <input type="color" id="color" name="color"><br>
+
+        <label for="range">range:</label>
+        <input type="range" id="range" name="range" min="0" max="100"><br>
+
+        <label for="tel">telephone:</label>
+        <input type="tel" id="tel" name="tel"><br>
+
+        <label for="url">url:</label>
+        <input type="url" id="url" name="url"><br>
+
+        <label for="tel">telephone:</label>
+        <input type="tel" id="tel" name="tel"><br>
+
+        <label for="search">search:</label>
+        <input type="search" id="search" name="search"><br>
+
+
+        <!-- Hidden Inputs: Used to pass data invisibly -->
+        <label for="hidden">hidden:</label>
+        <input type="hidden" id="hidden" name="userID" value="12345"><br><br>
+
+
+        <p>Radio buttons: </p> <!--For similar radio buttons, use same name-->
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+        <label><input type="radio" name="gender" value="gay"> Gay</label><br><br><br>
+
+
+        <p>Checkboxes: </p>
+        <label for="reading"><input type="checkbox" name="hobby" value="reading" id="reading"> Reading</label>
+        <label for="sports"><input type="checkbox" name="hobby" value="sports" id="sports"> Sports</label>
+        <label for="music"><input type="checkbox" name="hobby" value="music" id="music">Music</label><br><br><br><br>
+
+
+        <label for="message">tetxarea:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br><br>
+
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+        <!-- Buttons
+        Buttons are essential for submitting or resetting a form.
+        <button type="submit">: Submits the form data.
+        <button type="reset">: Resets all form fields to their default values.
+        <button type="button">: Performs custom actions (requires JavaScript). -->
+    </form><br><br><br><br><br><br>
+
+
+
+
+
+
+    <!-- Dropdown menus can be created with <select> and <option>  -->
+    <h3>Dropdowns</h3>
+    <form>
+        <label for="options">Choose an option:</label>
+        <select id="options" name="options">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+    </form>
+    <!-- multiple: Allows multiple selections.
+    size: Defines the number of visible options. Looks bad :(-->
+    <br><br><br><br><br><br>
+
+
+
+
+
+    <h3> File Upload</h3>
+    <!-- To allow file uploads, use the <input type="file"> element. Make sure to set the enctype attribute to multipart/form-data in the <form> tag. 
+    File-Specific Attributes:
+        accept: Specifies the types of files that can be uploaded.
+        multiple: Allows multiple file uploads. -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Upload a file:</label>
+        <input type="file" id="file" name="file"><br>
+        <button type="submit">Upload</button>
+    </form><br><br><br><br><br><br>
+
+
+
+
+
+    <h3>Fieldsets and Legends</h3>
+    <!-- Fieldsets and Legends: Group related form controls with <fieldset> and <legend>. -->
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname">
+        </fieldset>
+    </form><br><br><br><br><br><br> 
+
+
+
+
+
+
+    <h3>Client-side Validation</h3>
+    <!--Use the input event(oninput attribute) with JavaScript for real-time Validation.
+        Use aria-label or aria-describedby for better screen reader support. Add tabindex to control navigation order.
+        Ensure proper contrast and large clickable areas for better usability. -->
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required maxlength="10"><br>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" oninput="validateUsername()">
+    </form><br><br><br><br><br><br>
+
+
+
+
+
+
+
+    <h3>Custom Data Attributes</h3>
+    <!-- Custom attributes prefixed with 'data-' can store extra information for scripting. -->
+    <form action="/">
+        <input type="text" name="username" data-user-id="12345">
+    </form>
+
+
+
+
+</body>
+<script>
+    const validateUsername = () => {
+        console.log();
+    }
+</script>
+
+</html>

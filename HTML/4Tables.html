@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables</title>
+</head>
+<style>
+    table {
+        margin: 50px auto;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <!--
+        <table>: Creates the table.
+        <tr>: Table row.
+        <th>: Creates bold, centered text by default for column headers.
+        <td>: Table data (cell).
+    -->
+    <table>
+        <tr> <!--This is a single row-->
+            <th>Sr. #</th>
+            <th>Name</th>
+            <th>Birth Date</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Anand Shete</td>
+            <td>03-11-2003</td>
+            <td rowspan="2">Nashik</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Swati Shete</td>
+            <td>29-10-1971</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Sayee Shete</td>
+            <td colspan="2">20-05-2005</td>
+        </tr>
+    </table>
+
+
+
+
+    <!-- HTML tables can be divided into logical sections:
+    <thead>: Header section.
+    <tbody>: Body of the table.
+    <tfoot>: Footer section.
+    The <caption> element defines a title for the table, appearing above it.
+    -->
+
+    <table>
+        <caption>Student Grades</caption>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>PRN</th>
+                <th colspan="6">Subject and Grades</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Anil </td>
+                <td>122A8010</td>
+                <td>Maths</td>
+                <td>86</td>
+                <td>Physics</td>
+                <td>93</td>
+                <td>Chemistry</td>
+                <td>56</td>
+            </tr>
+            <tr>
+                <td>Siddharth </td>
+                <td>122A8065</td>
+                <td>Maths</td>
+                <td>65</td>
+                <td>Physics</td>
+                <td>56</td>
+                <td>Chemistry</td>
+                <td>98</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2">Total - 151</td>
+                <td colspan="2">Total - 149</td>
+                <td colspan="2">Total - 154</td>
+                <td colspan="2">Total - 454</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- For advanced layouts, CSS Grid can replace traditional tables.
+    While tables are great for displaying tabular data, avoid using them for layout purposes. Use CSS Grid or Flexbox for modern web design layouts. -->
+</body>
+
+</html>

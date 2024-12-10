@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Medias to an HTML document</title>
+</head>
+
+<body>
+    <!-- Bookmarks -->
+    <h3>
+        <a href="#iframe">Skip to Iframes</a>
+    </h3>
+    <br><br>
+
+
+    <!-- Images -->
+    <img src="./public/HTML Layout.png" alt="html-layout" title="html-layout-image" width="200px" height="150px">
+    <br><br><br>
+
+
+
+
+    <!-- Audios -->
+    <audio src="./public/sample.mp3" controls style="width: 500px;"></audio>
+    <br><br><br>
+    <!-- audio attributes
+    controls: Adds playback controls (play, pause, volume). 
+    autoplay: Starts playing the audio automatically (use sparingly, as it can annoy users).
+    loop: Repeats the audio continuously.
+    muted: Starts the audio in a muted state.
+    preload: Defines how the audio is loaded.
+        none: Do not preload.
+        metadata: Preload only metadata.
+        auto: Preload the entire file. 
+    -->
+
+
+
+
+    <!-- Videos -->
+    <video src="./public/sample.mp4" controls autoplay loop muted style="width: 500px;">
+    </video><br><br>
+    <!-- video attributes
+    controls: Displays video controls (play, pause, volume, etc.). 
+    autoplay: Automatically starts playing the video.
+    loop: Replays the video continuously.
+    muted: Starts the video with muted audio.
+    poster: Specifies an image to display while the video is loading or before playback starts.
+    preload: Defines how the video should load:
+        none: Do not preload.
+        metadata: Preload only metadata.
+        auto: Preload the entire video.
+    The <track> tag adds subtitles or captions to a video.
+        kind: Specifies the type of text track (e.g., subtitles or captions).
+        srclang: Language of the text track.
+        label: Display name for the track.
+    -->
+
+
+
+
+    <!-- Embedding Media from External Sources -->
+    <h1 id="iframe">iframe</h1>
+    <iframe src="./5Forms.html" width="500px" height="300px" frameborder="0"></iframe> <br><br><br>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/k7ELO356Npo?si=uq8ouMxdsmpm3kZ0"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=VGK9yOCjFBDIN2G-"
+    title="YouTube video player" frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+    <!-- YouTube forbids embedding some videos in a localhost environment without a public domain -->
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/VSz9D6J7aUU?si=n_YRSDM1Q5FSwexv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet</title>
+</head>
+<body>
+    <!--
+    Emmet is a powerful tool for speeding up HTML and CSS workflows in Visual Studio Code. It allows us to write shorthand syntax that expands into complete code snippets.
+    // Basic Tags:
+    div + Tab → <div></div>
+    p + Tab  → <p></p>
+    a + Tab → <a href=""></a>
+
+    // Nesting Elements >
+    ul > li*3                   // 3 li tags inside a ul tag
+
+    // Classes and IDs:
+    div#header.container        // div having an id header and class container
+    section>.content 
+
+    // Attributes:
+    input[type="text" placeholder="Enter your name"]
+
+    // Textual Content:
+    h1{Hello World}             // <h1>Hello World</h1>
+
+    // Multiplication
+    div.item*4                  // Creates 4 div elements
+
+    // Auto Numbering
+    li.item$*5                  // item1, item2, ...
+
+    // Grouping
+    div>(header>h1{Title}+nav>ul>li*3)+footer
+
+    // Sibling Elements
+    h1+p+aside
+
+    Emmet is not limited to HTML and CSS. It can be used with JavaScript, JSX, and other templates.
+    -->
+
+    <!-- The <details> tag in HTML is used to create a disclosure widget from which the user can view or hide additional content. This is often used for things like dropdown menus, hidden explanations, or additional information that the user may choose to reveal when they want to see it.
+        <details>: This element defines the collapsible content.
+        <summary>: This element defines the visible part that the user can click to expand or collapse the content.
+        Content: Any content placed after the <summary> will be hidden initially but can be revealed after clicking the <summary>
+    -->
+    <details>Answer</details>
+
+    <br><br>
+    
+    <details>
+        <summary>What is your Question?</summary>
+        My name is Anand
+    </details>
+</body>
+</html>
