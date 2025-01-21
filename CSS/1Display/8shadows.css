@@ -1,0 +1,75 @@
+/* 
+box-shadow in CSS is a property that allows you to add shadows to elements without affecting their layout or dimensions. It's commonly used to create visual depth and emphasis, making elements stand out from their surroundings. 
+
+box-shadow: x-offset y-offset blur spread color inset;
+    x-offset (required): Specifies offset in x-direction. +ve values move the shadow right, and -ve values move it left.
+    y-offset (required): Specifies offset in y-direction. +ve values move the shadow down, and -ve values move it up.
+    blur-radius (optional): The larger the value, the more blurred the shadow appears. Default is 0 (no blur).
+    spread-radius (optional): Specifies how much the shadow should spread. Positive values will cause the shadow to expand and grow bigger, negative values will cause the shadow to shrink. Default is 0 (no spread).
+    color (required): Specifies the color of the shadow. Can be any valid CSS color value (hex, rgb, rgba, etc.).
+    inset (optional): If specified as inset, the shadow will be inside the element instead of outside, giving it an inset shadow effect.
+
+*/
+/* Creating custom variables */
+:root {
+    --default-color:black;
+    --default-bg-color:aqua;
+    /* --shadow-color: some complex math calculation here.. */
+}
+
+.container {
+    height: 80vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+img, div {
+    height: 200px;
+    width: 300px;
+    margin: 40px;
+}
+
+#img1 {
+    box-shadow: 20px 20px green;
+}
+
+#img2 {
+    box-shadow: 20px 20px 10px green;
+}
+
+#img3 {
+    box-shadow: 0 0 50px 40px green;
+}
+
+/* Adding multiple shadows */
+#div4 {
+
+    border: 1px solid var(--default-color);
+    box-shadow: 10px 10px green, 20px 20px 10px red;
+}
+
+/* Adding inset */
+#div5 {
+    border: 1px solid (--default-color);
+    box-shadow: 10px 10px green inset;
+}
+
+
+/*
+text-shadow: offset-x offset-y blur-radius color;
+offset-x: x-direction offset. Positive values move the shadow to the right, and negative values move it to the left.
+offset-y: y-direction offset. Positive values move the shadow down, and negative values move it up.
+blur-radius (optional): A higher value makes the shadow more blurred and softer. Defaults to 0 (sharp edges).
+color (optional): The color of the shadow. Defaults to the current text color if not specified.
+*/
+
+#text1 {
+    text-shadow: 10px 10px 1px red;
+}
+
+#text2 {
+    text-shadow: 5px 5px 1px red,10px 10px 1px blue, 20px 20px 1px green;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+    <!-- External CSS -->
+    <!-- <link rel="stylesheet" href="0fonts.css"> -->
+    <link rel="stylesheet" href="1box model.css">
+    <style>
+        /* Internal CSS - added inside head tag to prevent "flash of unstyled content" or FOUC*/
+        h1 {
+            color: green;
+        }
+    </style>
+</head>
+<!-- 
+CSS Priority order:
+    1. Inline CSS 
+    2. Internal CSS   <style>
+    3. External CSS   <link>
+-->
+
+<body>
+    <h1 style="color: yellow;" class="paraClass">Hello World</h1>
+    <p class="paraClass">This is a paragraph</p>
+    <p>Lorem ipsum thisisaveryveryveryveryveryveryveryveryverylongword sit amet consectetur adipisicing elit. Hic,
+        nostrum! Rem atque eaque ex asperiores voluptatem? Similique dicta repellat repellendus temporibus at quisquam
+        qui provident sit voluptates, nisi magni dignissimos repudiandae et ad neque ipsa quaerat quae culpa incidunt
+        dolorum aut perspiciatis autem explicabo? Dolores, est dolor ut neque recusandae earum quam voluptatibus nisi
+        rem, porro dolorum ipsam laboriosam quae repudiandae voluptas placeat similique fugit animi autem eos omnis.
+    </p>
+</body>
+
+</html>
+
+
+<!-- 
+Basics of CSS
+    Syntax and Selectors
+    Inline, Internal, and External CSS
+    Comments in CSS
+CSS Selectors
+    Universal Selector (*)
+    Type Selector (h1, p)
+    Class Selector (.class)
+    ID Selector (#id)
+    Attribute Selectors
+    Pseudo-classes (e.g., :hover, :nth-child())
+    Pseudo-elements (e.g., ::before, ::after)
+CSS Box Model
+    Content
+    Padding
+    Border
+    Margin
+    Box-sizing 
+CSS Units
+    Absolute Units (px, cm, mm, in, etc.)
+    Relative Units (em, rem, %, vw, vh, vmin, vmax, etc.)
+CSS Colors
+    Named Colors
+    HEX, RGB, RGBA
+    HSL, HSLA
+    Gradients (Linear, Radial, Conic)
+Text and Typography
+    Font Properties (font-family, font-size, font-weight, font-style)
+    Text Properties (color, text-align, text-transform, letter-spacing, word-spacing)
+    Line Height (line-height)
+    Text Decoration (text-decoration, text-shadow)
+Backgrounds
+    Background Color
+    Background Image
+    Background Size
+    Background Repeat
+    Background Position
+    Background Attachment
+Borders
+    Border Width, Style, Color
+    Border Radius
+    Outline vs. Border
+    Box Shadows
+Positioning
+    Static
+    Relative
+    Absolute
+    Fixed
+    Sticky
+    Z-index
+Display and Visibility
+    Block, Inline, Inline-block
+    None
+    Flexbox
+    Grid
+    Visibility
+CSS Flexbox
+    Flex Container Properties (display: flex, flex-direction, justify-content, align-items, etc.)
+    Flex Item Properties (flex, align-self, order, etc.)
+CSS Grid
+    Grid Container (display: grid, grid-template-columns, grid-template-rows, gap)
+    Grid Items (grid-column, grid-row, grid-area)
+    CSS Grid vs. Flexbox
+CSS Animations and Transitions
+    Keyframes (@keyframes)
+    Animation Properties (animation-name, animation-duration, animation-delay, animation-iteration-count, etc.)
+    Transitions (transition-property, transition-duration, transition-timing-function, transition-delay)
+CSS Transforms
+    2D Transforms (translate(), rotate(), scale(), skew())
+    3D Transforms
+Responsive Design
+    Media Queries
+    Viewport Units (vw, vh)
+    CSS Breakpoints
+    Mobile-first Design
+CSS Variables
+    Declaring and Using Variables (--var-name, var(--var-name))
+CSS Frameworks and Preprocessors
+    Tailwind CSS, Bootstrap, Bulma
+    Sass/SCSS and LESS
+CSS Pseudo-Elements and Pseudo-Classes
+    :first-child, :last-child, :nth-child()
+    ::before, ::after
+    :hover, :focus, :active
+CSS Filters and Effects
+    Blur, Brightness, Contrast, Grayscale, Hue-Rotate
+    Backdrop-filter
+CSS Shapes and Clipping
+    Clip-path
+    Shapes (circle, polygon, inset, etc.)
+CSS Printing
+    Page Breaks
+    Print-specific Styles
+Advanced Topics
+    Custom Fonts (@font-face)
+    CSS Counters
+    CSS Scroll Snap
+    Object-fit and Object-position
+    Aspect Ratio
+    CSS Subgrid (Advanced Grid)
+Accessibility and Performance
+    ARIA Roles with CSS
+    CSS for Screen Readers
+    Reducing Render Blocking
+
+-->

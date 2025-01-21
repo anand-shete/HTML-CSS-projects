@@ -1,0 +1,150 @@
+/* 
+https://css-tricks.com/snippets/css/complete-guide-grid
+
+
+1. The Basics of CSS Grid
+Grid Container: The parent element where the grid is defined.
+Grid Items: The child elements of the grid container, placed inside the grid.
+
+
+2. Grid Terminologies
+    Grid Lines: The horizontal and vertical lines that divide the grid into cells.
+    Grid Tracks: The spaces between two grid lines (rows or columns).
+    Grid Cell: The smallest unit in a grid.
+    Grid Area: A rectangular space made up of one or more grid cells.
+    Implicit Grid: Tracks added automatically by the browser when items exceed the explicitly defined grid.
+    Explicit Grid: The grid defined by the developer using CSS properties.
+
+
+3. Defining Rows and Columns
+Use grid-template-rows and grid-template-columns to define the structure of the grid. 
+Units:
+    Pixels (px): Fixed size.
+    Fractions (fr): A flexible unit for allocating space proportional to container width.
+    Percentages (%): Relative to the grid container.
+    Auto: Automatically adjusts size based on content.
+    Minmax(): Defines a range for the track size.
+    Repeat(n, unit): where n is total repetitions and unit is unit of one column/row
+
+
+4. Placing Grid Items
+Grid items can be positioned using the following properties:
+    grid-column-start
+    grid-column-end
+    grid-row-start
+    grid-row-end
+
+
+5. Grid Gap
+The gap property defines the space between rows and columns. It can be set individually with row-gap and column-gap.
+gap: row-gap column-gap;
+
+
+6. Named grid-template-columns and grid-template-areas
+Grid Lines can be named for better readability
+.container {
+    display: grid;
+    grid-template-columns: [start] 1fr [middle] 2fr [end];
+}
+.item {
+    grid-column: start / middle;            // Spans from the "start" line to the "middle" line 
+}
+
+We can define reusable grid areas using grid-template-areas.
+
+
+7. Alignment and Justification
+Aligning Items in the Grid:
+    justify-items: Aligns items horizontally. (start, end, center, stretch)
+    align-items: Aligns items vertically.   (start, end, center, stretch)
+    place-items: Shorthand for align-items and justify-items.
+Aligning the Content of the Grid:
+    justify-content: Aligns the entire grid horizontally.   (start, end, center, stretch)
+    align-content: Aligns the entire grid vertically.   (start, end, center, stretch)
+    place-content: Shorthand for align-content and justify-content.
+Aligning individual grid items within their grid cells
+    align-self: controls the vertical alignment of a grid item within its grid cell.    (start, end, center, stretch).
+    justify-self: controls the horizontal alignment of a grid item within its grid cell. (start, end, center, stretch)    stretch (default): Stretches the item to fill the full width/height of its grid cell, unless a specific width/height is set for the item.
+
+
+8. Auto-Placement of Grid Items
+Implicit Grid Tracks:
+    If grid items exceed the defined grid, the browser creates extra tracks automatically.
+    Use grid-auto-rows and grid-auto-columns to define the size of implicitly created tracks.
+grid-auto-flow: Control the direction of item placement with grid-auto-flow.
+Values:
+    row (default): Fills rows first, then columns.
+    column: Fills columns first, then rows.
+    dense: Fills gaps in the grid.
+
+
+9. Responsive Grids
+Using repeat and auto-fit, we can save multiple @media queries
+    Eg. grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    auto-fit: Creates as many columns as possible without exceeding the container width.
+    minmax(200px, 1fr): Ensures columns are at least 200px wide but can expand to fill available space.
+    minmax(200px, 400px): Ensures each column is at least 200px wide and can expand upto 400px only.
+
+10. Grid Shorthand
+The grid shorthand combines rows, columns, and areas into a single property.
+
+*/
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+
+    /* CSS GRID */
+    display: grid;
+    /* row-gap: 10px;
+    column-gap: 10px; */
+    gap: 10px 10px;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.container div {
+    background-color: blue;
+    color: white;
+    border: 2px solid black;
+    font-size: 1.5rem;
+
+    /* for centering content only */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media only screen and (min-width:700px) {
+
+    .container {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Grid items */
+    .header, .footer {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .sidebar {
+        grid-row-start: 2;
+        grid-row-end: 4;
+    }
+
+    .content1 {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+}

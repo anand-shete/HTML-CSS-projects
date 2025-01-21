@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+
+    background-image: linear-gradient(red, blue);
+    /* A gradient tilted 45 degrees,
+    starting blue and finishing red */
+    background-image: linear-gradient(45deg, blue, red);
+
+    /* A gradient going from the bottom right to the top left corner,
+    starting blue and finishing red */
+    /* background-image: linear-gradient(to left top, blue, red); */
+
+    /* A gradient at the center of its container,
+    starting red, changing to blue, and finishing green */
+    background-image: radial-gradient(circle at center, red 0, blue, green 100%);
+
+}

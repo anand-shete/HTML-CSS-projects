@@ -1,0 +1,29 @@
+h1 {
+    background-color: aqua;
+    display: block;
+    /* Block elements take up the entire width of their parent container by default and can have margins, padding or borders applied in all directions.
+    Block elements can wrap other block elements and inline elements inside them, allowing for complex layouts. 
+    Eg. div, p, h3, nav, form, ul, ol, li */
+}
+
+
+span {
+    background-color: rgb(255, 152, 255);
+    display: inline;
+    /* Inline elements try to fit in single line.
+    Width and height have no effect on inline elements
+    Inline elements can have horizontal margins and padding, but vertical margins and padding (top and bottom) are not applied properly, so dont apply anything on inline elements*/
+    width: 200px;
+    height: 200px;
+}
+
+a {
+    background-color: rgb(83, 255, 83);
+    display: inline-block;
+    /* Similar to inline, but we can set the width, height, margin and paddings of an inline-block element.
+    Inline-block elements will align with text or other inline-block elements, but we can use the vertical-align property to control their exact vertical alignment. 
+    Eg. <a>  <span> <strong> <em> <b> <i> <img> <abbr> <code>
+    */
+    width: 200px;
+    height: 200px;
+}

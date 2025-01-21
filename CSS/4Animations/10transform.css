@@ -1,0 +1,117 @@
+/*
+CSS transform is a powerful property that allows us to manipulate the appearance of an element in 2D or 3D space. It enables us to translate, rotate, scale, and skew elements without affecting the document flow, meaning the element remains in its original position in terms of layout while visually transformed.
+The transform property takes one or more transformation functions as values.  
+
+
+CSS transform is a powerful property that allows us to manipulate the appearance of an element in 2D or 3D space. It enables us to translate, rotate, scale, and skew elements without affecting the document flow, meaning the element remains in its original position in terms of layout while visually transformed.
+
+Syntax of transform
+The transform property takes one or more transformation functions as values. These functions define how the element will be transformed.
+
+
+// Types of Transformations
+Translation 
+Moves an element from its original position without affecting the layout. The movement is defined in terms of the x-axis, y-axis, and optionally the z-axis.
+    translateX(value): Moves the element horizontally.
+    translateY(value): Moves the element vertically.
+    translateZ(value): Moves the element along the z-axis (for 3D transforms).
+    translate(valueX, valueY): Moves the element both horizontally and vertically.
+    translate3d(valueX, valueY, valueZ): Moves the element in 3D space.
+
+Rotation
+Rotates an element around a specified point (default is the center of the element). Angles are defined in degrees (deg), radians (rad), or turns (turn).
+    rotate(angle): Rotates an element in 2D space.
+    rotateX(angle): Rotates an element around the x-axis.
+    rotateY(angle): Rotates an element around the y-axis.
+    rotateZ(angle): Rotates an element around the z-axis (same as rotate for 2D).
+    rotate3d(x, y, z, angle): Rotates an element in 3D space.
+
+
+Scaling
+Resizes an element by expanding or shrinking it. Values can be greater than 1 (enlarge) or between 0 and 1 (shrink)
+    scaleX(value): Scales the width of the element.
+    scaleY(value): Scales the height of the element.
+    scale(valueX, valueY): Scales both width and height.
+    scaleZ(value): Scales an element along the z-axis (used in 3D transforms).
+    scale3d(valueX, valueY, valueZ): Scales an element in 3D space.
+
+Skewing (skew)
+Distorts an element along the x-axis, y-axis, or both. Angles are specified in degrees (deg).
+    skewX(angle): Skews the element horizontally.
+    skewY(angle): Skews the element vertically.
+    skew(angleX, angleY): Skews the element both horizontally and vertically.
+
+
+Matrix Transformations (matrix)
+A more complex way to combine multiple transforms in one function. Works with a 2D or 3D transformation matrix.
+    matrix(a, b, c, d, tx, ty)
+
+
+transform-origin
+The transform-origin property defines the point around which the transformation occurs. By default, the origin is at the center of the element (50% 50%).
+transform-origin: x-axis y-axis z-axis;
+Values can be percentages (50% 50%), lengths (100px 50px), or keywords (top, bottom, left, right, center).
+
+
+// Combining Multiple Transforms
+The transform property allows us to combine multiple transformation functions. When combining, the order of transforms matters because each operation is applied in sequence.
+
+// 3D Transforms
+CSS allows elements to be transformed in 3D space using functions like rotateX, rotateY, rotateZ, translateZ, and perspective.
+
+Perspective
+The perspective property is used to create a sense of depth, simulating a 3D effect. 
+It Sets the distance between the user and the z=0 plane.
+
+// When translateZ is used without scaling or adjusting other properties, the element might move out of the visible part of the screen.
+For example:
+    Positive values (translateZ(+ve)) might bring the element too close, making it seem invisible if it's beyond the viewport. Negative values (translateZ(-ve)) push the element into the screen, potentially making it disappear.
+To visualize the movement better, combine translateZ with rotateX or rotateY
+By default, transformations occur relative to the center of the element. If the transform-origin is not adjusted, the element might behave unpredictably when moved in 3D space Example:
+transform-origin: top center;   // Changes the pivot point 
+
+*/
+
+.container {
+    height: 95vh;
+    width: 95vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#blue-box {
+    background-color: blue;
+    color: white;
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    cursor: pointer;
+    margin: 30px auto;
+
+    /* combining tranformations with transitions */
+    transform-origin: center;
+    transition: all 0.5s ease 0s;
+}
+
+#blue-box:hover {
+    /* For 3D transformations like translateZ, the browser needs a perspective to render depth. Without a perspective, the transformation will occur but won't visually appear as "3D," making it seem like nothing has changed.
+    To fix this, apply a perspective to the parent container:
+    The perspective value controls the depth of the 3D effect. A smaller value (e.g., 500px) creates a stronger perspective (things closer to the viewer appear larger), while a larger value (e.g., 2000px) makes the perspective subtler. */
+
+    transform: perspective(200px) translateZ(-50px);
+    /* transform: translateZ(200px) rotateY(30deg); */
+
+    /* transform: rotateZ(-45deg); */
+
+    /* transform: scale(1.5); */
+
+    /* transform: skewX(30deg); */
+
+    /* Combining Multiple Transformations */
+    /* transform: translateX(100px) rotate(45deg) scale(1.5); */
+
+
+
+}

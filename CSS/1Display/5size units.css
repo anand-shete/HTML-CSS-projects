@@ -1,0 +1,156 @@
+/* 
+Absolute Units
+px (pixels): Represents a single pixel on the screen.
+pt (points): Commonly used in print design. 1 point is equal to 1/72th of an inch.
+cm (centimeters): Typically less used in web design due to differences in screen resolutions.
+mm (millimeters): Similar to centimeters, it’s rarely used in practice for the web.
+in (inches): Useful for print styles but not commonly used for screen design.
+*/
+.dot {
+    background-color: black;
+    /* width: 1px;
+    height: 1px; */
+
+    /* width: 1pt;
+    height: 1pt; */
+
+    /* width: 1mm;
+    height: 1mm; */
+
+    /* width: 1cm;
+    height: 1cm; */
+
+    /* width: 1in;
+    height: 1in; */
+
+}
+
+/*
+Relative Units: Relative units adjust their size in relation to other elements or the viewport.
+% (percent): A percentage of the parent element’s size. Useful for layouts that require responsiveness.
+rem (root em): Relative to the root <html> element(16px). This is constant throughout the document and cannot change
+em: Relative to parent, if no parent then relative to <html> where default is 16px
+vw (viewport width): 1 vw is equal to 1% of the width of the viewport. Most important and used in responsive design.
+vh (viewport height): 1 vh is equal to 1% of the height of the viewport.
+vmin: The vmin unit is a responsive unit that represents 1% of the smaller dimension between height and width of viewport. For example, if the vw is 800px and the vh is 600px, 1vmin would equal 6px (1% of 600px)
+vmax: Represents the larger value between vw and vh. Helpful in achieving maximum responsiveness based on the viewport dimensions.
+*/
+.parent {
+    background-color: aqua;
+    /* width: 50%; */
+
+    /* 16px * 3 = 48px cannot be changed  in case of rem */
+    /* font-size: 3rem; */
+
+    /* em is relative to parent, if no parent then relative to <html> where default = 16px*/
+    /* font-size: 10px; */
+    /* Instead of 16px, base size 16px * 3 = 48px set for all properties*/
+    /* font-size: 3em; */
+}
+
+.child {
+    background-color: rgb(192, 255, 255);
+    /* width: 30%;*/
+    /* 30% of 50% of parent will be the applied width */
+
+    /* since rem is relative to <html> element, its still 16px * 3 = 48px */
+    /* font-size: 3rem; */
+
+    /* em is relative to parent */
+    /* font-size: 2em; */
+    /* width: 10em; */
+
+    /* 10% of viewport height */
+    /* height: 10vh;
+    width: 50vw; */
+
+
+ 
+}
+
+
+/*
+Other Units
+ch:
+
+Represents the width of the "0" (zero) character of the font being used.
+Helpful for setting widths that align with text character lengths.
+ex:
+
+Represents the x-height of the current font, typically the height of the letter "x."
+Rarely used because its rendering can vary significantly across fonts.
+cap:
+
+Represents the height of capital letters in the current font.
+Less common but can be useful for specific design cases.
+Use Cases
+Absolute units are great when you need precise control, like in print layouts.
+Relative units are beneficial for creating responsive designs that adjust to varying screen sizes and user settings.
+Conclusion
+When designing web pages, it’s generally recommended to use relative units (like %, em, and rem) for most sizes to enhance flexibility and responsiveness. Absolute units (px) can be used when exact control is necessary.
+*/
+
+
+
+/*
+
+// Physical pixel vs Logical pixel
+Physical Pixel
+A physical pixel (or hardware pixel) is the smallest discrete element of a display that can be controlled to produce images. It represents the actual dots on a screen and is measured in physical units (e.g., millimeters).
+Characteristics:
+
+Fixed Size: Each physical pixel has a fixed size based on the display technology (LCD, OLED, etc.) and its resolution (number of pixels per inch, or PPI).
+Resolution: The total number of physical pixels is determined by the display's resolution (e.g., 1920x1080), which indicates how many pixels are present in width and height on the screen.
+Affect on Quality: More physical pixels typically mean sharper images, assuming content is designed at high enough resolutions.
+Logical Pixel
+Definition:
+
+A logical pixel (or device-independent pixel, DIPs) is an abstract unit of measure used in web design and software development to ensure consistency in visual appearance regardless of the physical pixel density of different screens.
+Characteristics:
+
+Fluidity: Logical pixels help developers design layouts that work across various devices with different screen sizes and pixel densities (like smartphones, tablets, and desktops).
+Scaling: Logical pixels enable the system to scale graphics and layouts according to the device's pixel density. For example, on high-DPI (dots per inch) screens, a single logical pixel may correspond to multiple physical pixels (for instance, 2x or 3x scaling).
+CSS Units: In CSS, a pixel (px) is often treated as a logical pixel, which can vary in size depending on the device's pixel density. For example, on a device with a pixel ratio of 2, one CSS pixel would correspond to 2 physical pixels.
+Example: Device Pixel Ratio
+The device pixel ratio (DPR) is a key concept that illustrates the relationship between physical and logical pixels:
+
+DPR = Physical Pixels / Logical Pixels
+A device with a DPR of 2 means that every logical pixel (1 CSS pixel) corresponds to 2 x 2 = 4 physical pixels on the screen.
+Visual Representation
+Low-DPI Screen:
+
+1 logical pixel corresponds to 1 physical pixel.
+This is typical for standard displays (e.g., 96 DPI).
+High-DPI Screen:
+
+1 logical pixel corresponds to multiple physical pixels (e.g., 1 logical pixel = 2, 4, or more physical pixels).
+Common in modern devices such as Retina displays, where the density is much higher (e.g., 220 DPI)
+
+
+// PPI vs DPI
+PPI (Pixels Per Inch)
+Definition: PPI refers to the number of pixels in one inch of an image when displayed on a screen.
+Context: It’s primarily a measurement used in digital imaging and graphics to describe screen resolution.
+Usage:
+Digital Displays: PPI indicates how densely packed the pixels are in a display. For example, a screen with a resolution of 1920x1080 pixels and a size of 24 inches has a specific PPI that affects the sharpness and clarity of images and text displayed.
+Higher PPI: More pixels in an inch result in finer detail and sharper images, which is particularly important for high-definition screens (like Retina displays).
+DPI (Dots Per Inch)
+Definition: DPI refers to the number of dots of ink a printer can apply in one inch of paper.
+Context: It’s used in the printing industry to measure the print resolution.
+Usage:
+Printing Quality: Higher DPI values typically indicate better print quality, as more dots can produce more detailed images and smoother gradients.
+Standard Values: Common DPI values for printing include 300 DPI for high-quality prints (like photographs) and 72 DPI for standard prints.
+Key Differences
+Measurement Focus:
+
+PPI: Relates to the pixel resolution of an image and how many pixels fit within an inch on a display.
+DPI: Relates to the resolution of a printer and how many ink dots are laid down per inch on printed material.
+Application:
+
+PPI is significant for digital displays (e.g., monitors, smartphones).
+DPI is significant for printed materials (e.g., photographs, documents).
+Effect on Quality:
+
+A high PPI means images are displayed with greater clarity on screens.
+A high DPI means printed images are more detailed and visually appealing.
+*/
