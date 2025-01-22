@@ -1,0 +1,98 @@
+/*
+Media queries in CSS are used to apply different styles to a web page based on the characteristics of the device or viewport, such as its width, height, orientation, and resolution. They enable responsive design, allowing a single set of HTML markup to adapt to various devices and screen sizes. 
+
+Syntax: 
+@media media-type and (media-feature) {  
+    // CSS rules to apply when the media query conditions are met  
+}
+
+media-type: 
+Specifies the type of device or display. This part is optional but often used
+Values: 
+    screen, print, speech, etc.
+
+media-feature: Specifies the condition or characteristic being checked, such as width, height, orientation, etc.
+Values:
+    Width and Height: min-width, max-width, min-height, max-height
+    Orientation: portrait or landscape
+    Resolution: resolution, min-resolution, max-resolution
+    Device Aspect Ratio: aspect-ratio
+    Device Pixel Ratio: min-device-pixel-ratio, max-device-pixel-ratio
+
+Styles within the curly braces {} apply only when the conditions specified in the media query are true.
+*/
+
+
+.container {
+    background-color: aqua;
+}
+
+@media screen and (min-width:300px) and (max-width:700px) {
+    .container {
+        background-color: green;
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:1200px) {
+    .container {
+        background-color: purple;
+    }
+}
+
+
+
+/* @media usage with Flexbox */
+/* .container {
+    background-color: antiquewhite;
+    border: 1px solid black;
+    display: flex;
+    height: 80vh;
+}
+
+.container > div {
+    height: 200px;
+    width: 200px;
+    border: 1px solid black;
+}
+
+#div1 {
+    background-color: green;
+}
+#div2 {
+    background-color: blue;
+}
+#div3 {
+    background-color: red;
+}
+#div4 {
+    background-color: yellow;
+} */
+
+
+@media only screen and (min-width:600px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+
+/* 
+Orientation-based Media Query:
+Apply styles when the viewport is in landscape orientation  
+@media screen and (orientation: landscape) {  
+    CSS rules  
+}
+
+
+Resolution-based Media Query
+Apply styles when the device has a minimum resolution of 300dpi  
+@media print and (min-resolution: 300dpi) {  
+    CSS rules  
+}
+*/

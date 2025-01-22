@@ -1,0 +1,42 @@
+p {
+    width: 200px;
+    /* Generic font families are a fallback mechanism, a means of preserving some of the style sheet author's intent when none of the specified fonts are available. A generic font family should be the last item in the list of font family names. Eg. serif, sans serif, monospace */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    font-size: 21px;
+
+    font-style: italic;
+
+    font-weight: 700;
+
+    /* line-height:  controls the amount of space between lines of text within a block-level element, like a paragraph or a div. You can set line-height to a unitless number (1.5) which is a multiplier of the current font size, or length values or percentages. */
+    line-height: 40px;
+
+    /* word-wrap: break-word; is a helpful tool to ensure that long, unbreakable words (like long URLs or long strings of text) break and wrap to the next line, avoiding overflow. */
+    word-wrap: break-word;
+}
+
+p.paraClass {
+    /* CSS colors */
+
+    /* Named values */
+    /* background-color: aqua; */
+
+    /* rgb(red, green, blue) */
+    /* background-color: rgb(0, 0, 0); */
+
+    /* rgba(red, green, blue, opacity)  */
+    /* background-color: rgba(0,0,0,0.5); */
+
+    /* rrggbbaa   (a = alpha value)     */
+    /* background-color: #69fdff;                 */
+
+    /*  hsl(hue, saturation, lightness) 
+    hue - degree on color wheel from 0 to 360. red means 0 or 360, green means 120, blue means 240
+    saturation - saruration is described as intensity of color. It is percentage value from 0 to 100%
+    lightness - 0% means no light(dark) given to color, 100% means full light */
+    background-color: hsl(0, 100%, 50%); 
+
+    /* hsla(hue, saturation, lightness, alpha) */
+    /* background-color: hsla(0, 100%, 50%, 0.632)  */
+}

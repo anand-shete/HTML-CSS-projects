@@ -1,0 +1,62 @@
+/*
+CSS provides a wide range of properties to style and manipulate images in various ways. 
+
+width and height
+Sets the width and height of an image.
+Values:
+    Absolute values: px, cm, in, etc. (width: 300px;)
+    Relative values: %, em, rem (width: 50%;)
+    auto(defualt): Maintains the aspect ratio when only one dimension (width or height) is set.
+
+object-fit
+Specifies how an image should be resized to fit its container.
+Values:
+    fill (default): Stretches the image to fill the container, possibly distorting it.
+    contain: Scales the image to fit inside the container without cropping or distorting.
+    cover: Scales the image to cover the entire container, cropping if necessary.
+    none: The image retains its original size.
+    scale-down: Scales the image down to fit the container only if it's larger.
+
+object-position
+Aligns the image within its container when object-fit is applied.
+Values: Takes two values for x and y position (Eg. 50% 50%, top right, 20px 30px).
+    object-position: x y;
+
+filter
+Applies various effects to an image.
+Values:
+    blur(value): Blurs the image.
+    brightness(value): Adjusts brightness ( value < 1 for dimmer, >1 for brighter).
+    contrast(value): Contrast refers to the difference between the darkest and lightest parts of the image. Increasing the contrast makes the light areas lighter and the dark areas darker, making the image more vivid. (defualt value 1).
+    grayscale(value): High values converts the image to black and white (1 for 100%).
+    hue-rotate(deg): Hue rotation shifts each color along the color wheel. values can be +ve or -ve
+    invert(value): Inverts colors (1 for full inversion).
+    opacity(value): Adjusts transparency (0 for invisible, 1 for full opacity).
+    sepia(value):  The sepia filter in CSS is used to give an image or element a warm, brownish tone, creating an effect reminiscent of old photographs or vintage images. (1 applies a full sepia effect)
+
+
+opacity
+Adjusts the transparency of the image.
+Values: Between 0 (completely transparent) and 1 (completely opaque).*/
+
+img {
+    height: 500px;
+    width: 300px;
+
+    object-fit: cover;
+    /* object-fit: contain;     */
+    /* object-fit: scale-down; */
+
+    /* object-position: top left; */
+
+    border: 1px solid black;
+
+    /* filter: blur(1px); */
+    /* filter: brightness(2); */
+    /* filter: contrast(0); */
+    /* filter: grayscale(); */
+    /* filter: hue-rotate(180deg); */
+    /* filter: invert(1); */
+    /* filter: opacity(0); */
+    /* filter: sepia(1); */
+}

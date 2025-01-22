@@ -1,0 +1,152 @@
+/* Universal selector */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Type Selector */
+p {
+    color: blue
+}
+
+
+/* Class selector */
+.spanClass {
+    background-color: aqua;
+}
+
+/* ID selector */
+#spanId {
+    background-color: aqua;
+}
+
+
+/* Attribute selectors */
+/* Selects elements that have the specified attribute */
+/* Eg. selects all the elements having the href attribute */
+[href] {
+    color: black;
+}
+
+/* Exact Match Selector - Selects elements where the attributes value matches exactly */
+/* Eg. select all the elements having the type attribute's values as text */
+[type="text"] {
+    border: 1px solid red;
+}
+
+
+/* Pseudo classes - Pseudo-classes define the state of an element. */
+/* :hover: Matches when the mouse hovers over the element. */
+button:hover {
+    background-color: gray;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+/* :focus: Matches when the element gains focus (e.g., a click on form input field). */
+input:focus {
+    background-color: aqua;
+    padding: 10px;
+}
+
+/* :active: Matches when the element is being clicked. */
+button:active {
+    padding: 100px;
+}
+
+
+
+/* :first-child: Apply the CSS properties iff element is first child of a parent. */
+/* Eg. is h1 first child of any parent? */
+h1:first-child {
+    color: red;
+}
+
+/* :last-child: Applies the CSS properties iff given element is last child of any parent. */
+button:last-child {
+    color: blue;
+}
+
+/* :nth-child(n): Apply the CSS properties if the element is n-th child of any parent */
+/* Eg. is input 2nd child of any parent in document */
+input:nth-child(2) {
+    font-size: 2rem;
+}
+
+/* :nth-of-type(n): Appy CSS properties if element is the nth child of the same element type, but of SAME PARENT. */
+/* Eg. select all h1 tags if they are 2nd child only. */
+h1:nth-of-type(2) {
+    color: green;
+}
+
+/* :not(selector): Matches elements not matching the given selector */
+/* Eg. select all div not having the class container */
+div:not(.container) {
+    background-color: gray;
+}
+
+
+
+/* Pseudo-elements: 
+Pseudo-elements allow us to style parts of an element. */
+
+/* ::before
+Description: Inserts content before the element's content */
+h1::before {
+    content: "⭐ ";
+}
+
+/* ::after
+Description: Inserts content after the element's content. */
+h1::after {
+    content: " ✨";
+}
+
+/* ::first-line
+Description: Styles the first line of a block of text. */
+p::first-line {
+    font-weight: bold;
+}
+
+/* ::first-letter
+Description: Styles the first letter of a block of text. */
+p::first-letter {
+    font-size: 2em;
+}
+
+
+
+/* Combining CSS selectors */
+/* selects all p element inside a div */
+div p {
+    color: red;
+}
+
+/* selects all button that are direct children of form element */
+form > button {
+    background-color: rgb(100, 4, 255);
+}
+
+/*  selects the first p immediately following h1*/
+h1 + p {
+    font-style: italic;
+}
+
+/* selects all span tags which are siblings of h1 */
+h1 ~ span {
+    color: blue;
+}
+
+
+/* Grouping Selectors */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Complex examples */
+/* applies css properties when a tag is hovered which is inside li that is only first child of ul which is inside a div having id main and class container  */
+div#main.container > ul > li:first-child a:hover {
+    text-decoration: underline;
+}
+  

@@ -1,0 +1,137 @@
+/* 
+The background property in CSS is a shorthand property used to set multiple background-related properties of an element at once. It allows us to control the background color, image, position, size, repeat behavior, and other features.
+
+background-color
+Sets the background color of an element.
+Values:
+    Color names (e.g., red, blue).
+    Hexadecimal (e.g., #ffcc00).
+    RGB/RGBA (e.g., rgb(255, 255, 0) or rgba(255, 255, 0, 0.5)).
+    HSL/HSLA (e.g., hsl(50, 100%, 50%))
+
+
+background-image
+Sets the background image for a block-level element. 
+Values:
+    An absolute URL: url('http://example.com/sample2.jpg')
+    A relative URL: url('../../HTML/public/sample2.jpg')
+    A data URL: url('data:image/png;base64,...')
+    CSS allows us to define multiple background images and properties by separating them with commas. The first image is drawn on top, and subsequent images are stacked underneath.
+
+
+background-size
+Specifies how the background image should fit within the element.
+Values:
+    auto: Default; keeps the original size of the image.
+    cover: Scales the image to cover the entire element.
+    contain: Scales the image to fit within the element without cropping.
+    Length values: 200px 100px (width and height).
+    Percentages: 50% 100% (relative to the element's size).
+
+
+background-position
+Aligns the background image within the element.
+Values:
+    Keywords: top, right, bottom, left, center, top right, bottom left....
+    Coordinates: 50% 50% (horizontal and vertical position).
+
+
+background-repeat
+Specifies whether the background image should repeat.
+Values: 
+    repeat: Repeats both horizontally and vertically.
+    repeat-x: Repeats horizontally.
+    repeat-y: Repeats vertically.
+    no-repeat: Does not repeat.
+    space: Repeats without clipping, with equal space between tiles.
+    round: Stretches or shrinks the image so it fits the container perfectly.
+
+
+background-attachment
+Specifies whether the background image scrolls with the page.
+Values:
+    scroll (default): Background scrolls with the content.
+    fixed: Background stays in place, even when the content scrolls.
+    local: Background scrolls with the element’s content.
+
+
+background-origin
+Defines where the background image’s position is relative to.
+Values:
+    border-box: Starts from the outer edge of the border.
+    padding-box: Starts from the outer edge of the padding.
+    content-box: Starts from the edge of the content.
+
+
+background-clip
+Purpose: Specifies how far the background extends within the box.
+Values:
+    border-box: Background extends to the border edges.
+    padding-box: Background extends only to the padding edges.
+    content-box: Background extends only to the content edges.
+
+
+clip-path
+Clips the background to a specific shape.
+Values:
+    circle(units): Clips the image into a circle.
+    polygon(units): Clips the image into a polygon.
+    inset(units): Clips the image into a rectangle with inset dimensions.
+
+image-rendering
+Controls how the browser renders the image (important for pixel art or scaling).
+Values:
+    auto: Default rendering.
+    pixelated: Scales the image with hard edges (useful for pixel art).
+    crisp-edges: Similar to pixelated, ensures sharp edges.
+
+
+
+If not explicitly set, the default values are:
+background-color: transparent.
+background-image: none.
+background-position: 0% 0%.
+background-size: auto.
+background-repeat: repeat.
+background-attachment: scroll.
+background-origin: padding-box.
+background-clip: border-box.
+
+
+// shorthand 
+background: <background-color> <background-image> <background-position> / <background-size> <background-repeat> <background-attachment> <background-origin> <background-clip>;
+
+*/
+
+.container {
+    height: 80vh;
+    width: 90vw;
+    background-color: rgb(255, 211, 153);
+    
+    /* background-image: url('../../HTML/public/sample2.jpg'); */
+    background-image: linear-gradient(red, blue);
+
+    /* A gradient tilted 45 degrees,
+    starting blue and finishing red */
+    /* background-image: linear-gradient(45deg, blue, red); */
+
+    /* A gradient going from the bottom right to the top left corner,
+    starting blue and finishing red */
+    /* background-image: linear-gradient(to left top, blue, red); */
+
+    /* A gradient at the center of its container,
+    starting red, changing to blue, and finishing green */
+    /* background-image: radial-gradient(circle at center, red 0, blue, green 100%); */
+    
+    /* background-size: cover; */
+    background-size: contain;
+
+    background-position: top right;
+    /* background-position: 100% 100%; */
+
+    background-repeat: no-repeat;
+
+    /* clip-path: circle(50%); */
+
+    cursor: not-allowed;
+}

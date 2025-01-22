@@ -1,20 +1,18 @@
 /* 
-Flex Container: The parent element where the flexbox properties are applied. 
-    A flex-container controls the layout of all the items overall
-    Made using display: flex;
-Flex Items: The child elements inside the flex container. These elements are laid out according to the flexbox rules.
+Flex Container: The parent element where the flexbox properties are applied.  A flex-container controls the layout of all the items overall. 
+set display: flex;  to make a flex container
+Flex Items: The child elements inside the flex container. These elements are laid out according to the flexbox rules.items can have block or inline display it doesn't matter
 
 
 // Main and Cross Axis
-Main Axis: Defined by the flex-direction. Horizontal by default (row).
-Cross Axis: Perpendicular to the main axis. Vertical by default (column)
+Main Axis: Defined by the flex-direction. Horizontal by default (flex-direction: row)
+Cross Axis: Perpendicular to the main axis. Vertical by default (flex-direction: column)
 
 
 
 // Flex-container properties
-display: flex; 
-Activates flexbox for the container. Items within the container become flex items.
-These properties are used when we want to change styling of all the items inside the flex container.
+display: flex;  Activates flexbox for the container. Items within the container become flex items.
+These properties are used when we want to change styling of all the items of the flex container.
 
 flex-direction: Defines the direction of the main axis (row or column).
     row (default): Items are placed left-to-right (LTR) or right-to-left (RTL).
@@ -54,7 +52,8 @@ Aligns a group of flex lines (when flex-wrap is used).
     baseline: Aligns items along their text baselines.
 
 gap
-Defines the space between flex items. Can be set as row-gap and column-gap for finer control.
+Defines the space between flex items. In a row-based flex container (default), the gap sets the horizontal spacing between items. If the flex container is column-based (flex-direction: column), it sets the vertical spacing. 
+Can be set as row-gap and column-gap for finer control. 
 
 
 

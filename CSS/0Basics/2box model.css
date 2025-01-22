@@ -1,0 +1,37 @@
+/*
+The CSS box model is a fundamental concept in web design and layout that describes how elements on a webpage are structured and how their dimensions are calculated.
+Each an every element in a webpage is rendered like this 
+
++-----------------------------+  
+|          Margin             |  ← Outer space  
+|  +-----------------------+  |  
+|  |        Border         |  |  ← Border  
+|  |  +-----------------+  |  |  
+|  |  |     Padding     |  |  |  ← Padding  
+|  |  |    +---------+  |  |  |  
+|  |  |    | Content |  |  |  |  ← Content  (defined by width/height) 
+|  |  |    +---------+  |  |  |  
+|  |  +-----------------+  |  |  
+|  +-----------------------+  |  
++-----------------------------+
+
+
+
+// box-sizing
+box-sizing: content-box (default); 
+Total width = applied width + padding(L & R) + border(L & R) + margin(L & R) 
+Total Height = applied height + padding(T & B) + border(T & B) + margin(T & B) 
+
+
+box-sizing: border-box; 
+Total width = applied width
+*/
+
+h1 {
+    background-color: red;
+    border: 20px solid black;
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    box-sizing: border-box;     
+}   
